@@ -2,6 +2,11 @@
 
 # This script was created with the purpose of cloning a repository with existing config files and then creating symbolic links from the repository files to their intended locations.
 
+#To-Do
+# comments
+# Full paths (no ~)
+# Let user specify repo clone location + set default location
+
 # Checking if git is installed on system
 if [[ -e /bin/git ]]; then
   # Git is installed, Clone existing configuration files from https://gitlab.com/cit2420/2420-as2-starting-files into directory named config_files

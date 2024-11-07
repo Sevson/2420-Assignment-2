@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Symbolic Link Script
 # This script creates symbolic links from the repository files to the directory location

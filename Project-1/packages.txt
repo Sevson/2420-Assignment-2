@@ -1,0 +1,3 @@
+# List of all packages to be installed, please keep to one package per line
+tmux
+kakoune

@@ -29,7 +29,7 @@ Please ensure the following requirements are met:
 
 ## Project 1: System Setup Scripts
 
-### Package Installation Script
+### Install Script
 ---------------------------
 This script automates the installation of packages listed in a specified file (by default, "packages"). It reads through each line in the file, ignores blank and commented lines, checks if each package is already installed, and installs any missing packages.
 
@@ -38,7 +38,7 @@ This script automates the installation of packages listed in a specified file (b
 - It supports non-interactive installation by using `--noconfirm` to automatically answer "yes" to prompts.
 - The script skips blank or commented lines in the package list, ensuring only valid package names are processed.
 
-### Symbolic Link Script
+### Config Script
 ---------------------
 This script automates the setup of symbolic links for configuration and executable files from a Git repository to specific directories on the user's system.
 
@@ -48,7 +48,7 @@ This script automates the setup of symbolic links for configuration and executab
   - Organize cloned files into the `~/bin` and `~/.config` directories.
 - It uses Git to clone the repository and creates symbolic links for scripts, configuration files, and other necessary files.
 
-### Script Handler
+### Init Script
 --------------
 This script manages system setup tasks by running installation and configuration scripts as specified by user options. It checks if the user is running the script as root, provides a menu for available options, and uses `getopts` to parse options.
 
@@ -61,7 +61,7 @@ This script manages system setup tasks by running installation and configuration
 
 ## Project 2: User Creation Script
 
-This script automates the process of creating a new user on the system. It sets up the user's home directory, adds the user to specified groups, configures their shell, and ensures proper access control.
+This script automates the process of creating a new user on the system. It sets up the user's home directory, adds the user to specified groups, configures their shell, and ensures proper permissions.
 
 ### Key Features:
 - Creates a new user and their home directory.

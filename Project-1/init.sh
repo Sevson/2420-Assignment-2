@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script Handler
+# Init script
 # --------------
 # This script manages system setup tasks by running installation and configuration scripts as specified by user options.
 # It checks if the user is running the script as root, provides a menu for available options, and uses `getopts` to parse options.

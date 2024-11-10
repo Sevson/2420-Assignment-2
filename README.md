@@ -16,7 +16,7 @@ To run these scripts, you must have root privileges, either by logging in as the
 - **Packages File**: Lists all packages to be installed onto the system.
 
 ### Project 2: User Creation Script
-This script automates the process of creating a new user on the system, including setting up the home directory, group memberships, shell preferences, and ensuring proper access control.
+This script automates the process of creating a new user on the system, including setting up the home directory, group memberships, shell preferences, and ensuring proper permissions.
 
 ## Prerequisites
 

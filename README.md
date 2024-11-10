@@ -69,9 +69,6 @@ This script automates the process of creating a new user on the system. It sets 
 - Configures shell preferences, such as the default shell and environment variables.
 - Ensures the new user has the appropriate access rights and permissions.
 
----
-
-## File Structure
 
 
 

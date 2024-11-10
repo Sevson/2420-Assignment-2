@@ -2,12 +2,6 @@
 
 # https://tldp.org/LDP/sag/html/adduser.html used this to start
 
-#!/usr/bin/env bash
-
-# The shebang specifies the script interpreter. Here, '/usr/bin/env bash' ensures that
-# the user's environment PATH is used to locate the Bash interpreter.
-# https://linuxize.com/post/bash-shebang/
-
 # Checking if the script is run with root privileges by evaluating $EUID (Effective User ID).
 # $EUID will be 0 for the root user. If not, the script will display an error and exit.
 # This is important because creating users and modifying system files requires root access.

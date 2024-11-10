@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# The shebang line above specifies the script interpreter. Using '/usr/bin/env bash' ensures that
-# Bash is located according to the user's environment, providing flexibility across different systems.
-# https://linuxize.com/post/bash-shebang/
-
 # Symbolic Link Script
 # ---------------------
 # This script automates the setup of symbolic links for configuration and executable files from a Git repository

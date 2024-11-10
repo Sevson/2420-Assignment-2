@@ -28,7 +28,7 @@ error_exit() {
 # The 'awk' command parses /etc/passwd, finds the highest UID >= 1001, and adds 1 to it.
 # This ensures the new user gets a unique UID, following the Linux convention to start user UIDs at 1001.
 # https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/
-# https://www.linuxnix.com/understanding-uid-and-gid-in-linuxunix/
+# https://www.cbtnuggets.com/blog/technology/system-admin/linux-file-permission-uid-vs-gid
 check_uid() {
     new_UID=$(awk -F: '$3 >= 1001 {uid=$3} END {print uid+1}' /etc/passwd)
     GID=$new_UID
@@ -53,7 +53,7 @@ add_user() {
 
 # Function to add the new user to additional groups if specified.
 # Checks if each group exists in /etc/group. If it does, appends the username to that group.
-# https://www.linuxnix.com/linux-group-management/
+# https://www.geeksforgeeks.org/group-management-in-linux/
 add_group() {
     for group in "${group_add[@]}"; do
         if ! grep -q "^$group:" /etc/group; then

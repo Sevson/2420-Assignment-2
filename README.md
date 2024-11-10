@@ -29,7 +29,7 @@ This script automates the process of creating a new user on the system, includin
 
 ## Project 1: System Setup Scripts
 
-[!WARNING] only run the Init script and use provided options
+> **⚠️ Warning:** Only run the Init script and use provided options.
 
 ### Init Script
 --------------

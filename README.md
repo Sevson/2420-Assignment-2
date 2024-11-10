@@ -29,6 +29,28 @@ This script automates the process of creating a new user on the system, includin
 
 ## Project 1: System Setup Scripts
 
+Warning: only run the Init script and use provided options
+
+### Init Script
+--------------
+This script manages system setup tasks by running installation and configuration scripts as specified by user options. It checks if the user is running the script as root, provides a menu for available options, and uses `getopts` to parse options.
+
+#### Key Points:
+- **Root Check**: The script checks if it is being run as root. If not, it prompts the user to run it with `sudo`.
+- **Menu Options**: It provides a menu with options to run the installation script (`-i`), the configuration script (`-c`), or to display the help menu (`-h`).
+- **Error Handling**: The script displays an error message and exits if no valid options are provided.
+
+Usage
+
+# Run both install and config setup scripts
+sudo ./init.sh -i -c
+
+# Run only the install script
+sudo ./init.sh -i
+
+# Show help menu
+sudo ./init.sh -h
+
 ### Install Script
 ---------------------------
 This script automates the installation of packages listed in a specified file (by default, "packages"). It reads through each line in the file, ignores blank and commented lines, checks if each package is already installed, and installs any missing packages.
@@ -48,14 +70,7 @@ This script automates the setup of symbolic links for configuration and executab
   - Organize cloned files into the `~/bin` and `~/.config` directories.
 - It uses Git to clone the repository and creates symbolic links for scripts, configuration files, and other necessary files.
 
-### Init Script
---------------
-This script manages system setup tasks by running installation and configuration scripts as specified by user options. It checks if the user is running the script as root, provides a menu for available options, and uses `getopts` to parse options.
 
-#### Key Points:
-- **Root Check**: The script checks if it is being run as root. If not, it prompts the user to run it with `sudo`.
-- **Menu Options**: It provides a menu with options to run the installation script (`-i`), the configuration script (`-c`), or to display the help menu (`-h`).
-- **Error Handling**: The script displays an error message and exits if no valid options are provided.
 
 ---
 
@@ -69,8 +84,6 @@ This script automates the process of creating a new user on the system. It sets 
 - Configures shell preferences, such as the default shell and environment variables.
 - Ensures the new user has the appropriate access rights and permissions.
 
----
+Usage
 
-## Usage
-
-
+sudo ./new_user -u <username> -s <shell> -g <group1,group2,...>

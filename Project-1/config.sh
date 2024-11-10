@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # The shebang line above specifies the script interpreter. Using '/usr/bin/env bash' ensures that
 # Bash is located according to the user's environment, providing flexibility across different systems.

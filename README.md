@@ -1,6 +1,6 @@
 # 2420-Assignment-2 Shell Scripting
 
-This repository contains two projects designed to simplify system setup and user management tasks.\
+This repository contains two projects designed to simplify system setup and new user setup.
 
 ## Prerequisites
 

@@ -1,20 +1,15 @@
 #!/bin/bash
 
-# The shebang (#!) at the start of this file specifies the interpreter to use when executing the script.
-# In this case, '/bin/bash' specifies the script should be executed using the Bash shell.
-# This is critical for compatibility across Unix-like systems.
-# Reference: https://linuxize.com/post/bash-shebang/
-
 # Script Handler
 # --------------
 # This script manages system setup tasks by running installation and configuration scripts as specified by user options.
 # It checks if the user is running the script as root, provides a menu for available options, and uses `getopts` to parse options.
 
-# Check if the script is running as the root user.
-# "$EUID" (Effective User ID) is a built-in variable in Bash that holds the numeric ID of the user running the script.
-# Root's ID is 0, so if "$EUID" is not 0, the user is not root.
-# To handle permissions issues, the script exits with a message to use sudo if it detects a non-root user.
-# Reference: https://stackoverflow.com/questions/27669950/difference-between-euid-and-uid
+# Checking if the script is run with root privileges by evaluating $EUID (Effective User ID).
+# $EUID will be 0 for the root user. If not, the script will display an error and exit.
+# This is important because creating users and modifying system files requires root access.
+# https://tldp.org/LDP/abs/html/internalvariables.html#EUID
+
 if [ "$EUID" -ne 0 ]; then
     echo "Please run as root or use 'sudo -E'."
     exit 1
@@ -24,7 +19,6 @@ fi
 # `dirname` extracts the directory path from a full path.
 # `realpath` converts relative paths to absolute paths.
 # `"${BASH_SOURCE[0]}"` holds the path of the currently executing script, so `realpath "${BASH_SOURCE[0]}"` provides the full path to this script.
-# This is useful to locate other setup files in the same directory as the script.
 currentdir=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
 
 # Define the help menu as a string stored in the `menu` variable for displaying options to the user.
@@ -36,14 +30,13 @@ menu="OPTIONS:
   -c    Run the configsetup script
   -h    Print the help menu"
 
-# Initialize `OPTIND` to 1, which is necessary for `getopts` (the option parser) to function properly.
+# Initialize `OPTIND` to 1,  for getopts to function
 # `OPTIND` keeps track of the index of the next argument to be processed.
-# It's recommended to reset OPTIND to 1 before parsing options in any shell script.
-# Reference: https://unix.stackexchange.com/questions/214141/explain-the-shell-command-shift-optind-1
+# https://unix.stackexchange.com/questions/214141/explain-the-shell-command-shift-optind-1
 OPTIND=1
 
 # `getopts` processes command-line options `i`, `c`, and `h`, with `:` specifying no argument is required for each option.
-# A colon (`:`) at the start of the options string (`:ich`) suppresses error messages from `getopts` for unrecognized options.
+# A colon (`:`) at the start of the options string (`:ich`) to suppresses error messages
 while getopts ":ich" opt; do
   # `case` statement processes each option as specified.
   case "${opt}" in

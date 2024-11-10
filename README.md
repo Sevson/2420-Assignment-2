@@ -50,6 +50,10 @@ Run only the install script
 ````
 sudo ./init.sh -i
 ````
+Run only the config script
+````
+sudo ./init.sh -i
+````
 Show help menu
 ````
 sudo ./init.sh -h

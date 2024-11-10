@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Symbolic Link Script
+# Config Script
 # ---------------------
-# This script automates the setup of symbolic links for configuration and executable files from a Git repository
-# to specific directories on the user's system
+# This script sets symbolic links for configuration and executable files from a Git repository to specific directories on the user's system
+
 # The script allows the user to:
 #   - Specify a custom location to clone the repository.
 #   - Organize cloned files into the ~/bin and ~/.config directories
@@ -14,9 +14,9 @@ repo_to_clone="https://gitlab.com/cit2420/2420-as2-starting-files"
 # Default directory to clone the repository; falls back to "$HOME/config_files" if no location is specified.
 def_repo_loc="$HOME/config_files"
 
-# Define an error handler function, `error_exit`, to handle error messages consistently throughout the script.
-# If an error occurs, this function displays an error message and exits with a non-zero status code.
-# Using functions for handling errors is a best practice in Bash scripting for reusability and readability.
+# `error_exit` function to handle error messages consistently throughout the script.
+# If an error occurs function throws an error message and exits with a non-zero status code.
+# Using functions for handling errorsfor reusability and readability.
 # https://linuxize.com/post/bash-functions/
 error_exit() {
     echo "Error: $1"
@@ -38,7 +38,6 @@ echo "Cloning repository to $def_repo_loc"
 git clone "$repo_to_clone" "$def_repo_loc" || error_exit "Failed to clone repository"
 
 # Check if the ~/bin directory exists in the user directory. If not, create it.
-# https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/home.html
 if [[ ! -d "$user_dir/bin" ]]; then
     echo "Creating bin directory at $user_dir/bin"
     mkdir -p "$user_dir/bin" || error_exit "Failed to create bin directory"

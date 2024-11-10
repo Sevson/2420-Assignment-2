@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Package Installation Script
+# install Script
 # ---------------------------
 # This script automates the installation of packages listed in a specified file (by default, "packages").
 # It reads through each line in the file, ignores blank and commented lines, checks if each package is already installed,

@@ -29,7 +29,7 @@ This script automates the process of creating a new user on the system, includin
 
 ## Project 1: System Setup Scripts
 
-Warning: only run the Init script and use provided options
+[!WARNING] only run the Init script and use provided options
 
 ### Init Script
 --------------
@@ -40,16 +40,20 @@ This script manages system setup tasks by running installation and configuration
 - **Menu Options**: It provides a menu with options to run the installation script (`-i`), the configuration script (`-c`), or to display the help menu (`-h`).
 - **Error Handling**: The script displays an error message and exits if no valid options are provided.
 
-Usage
+#### Usage
 
-# Run both install and config setup scripts
+Run both install and config setup scripts
+````
 sudo ./init.sh -i -c
-
-# Run only the install script
+````
+Run only the install script
+````
 sudo ./init.sh -i
-
-# Show help menu
+````
+Show help menu
+````
 sudo ./init.sh -h
+````
 
 ### Install Script
 ---------------------------
@@ -85,5 +89,6 @@ This script automates the process of creating a new user on the system. It sets 
 - Ensures the new user has the appropriate access rights and permissions.
 
 Usage
-
+````
 sudo ./new_user -u <username> -s <shell> -g <group1,group2,...>
+````

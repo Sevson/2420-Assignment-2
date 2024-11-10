@@ -1,6 +1,13 @@
 # 2420-Assignment-2 Shell Scripting
 
-This repository contains two projects designed to simplify system setup and user management tasks.
+This repository contains two projects designed to simplify system setup and user management tasks.\
+
+## Prerequisites
+
+Please ensure the following requirements are met:
+
+- **Operating System**: Arch Linux with Bash
+- **Permissions**: Root access or `sudo` privileges to execute the scripts
 
 ## Projects Overview
 
@@ -17,13 +24,6 @@ To run these scripts, you must have root privileges, either by logging in as the
 
 ### Project 2: User Creation Script
 This script automates the process of creating a new user on the system, including setting up the home directory, group memberships, shell preferences, and ensuring proper permissions.
-
-## Prerequisites
-
-Please ensure the following requirements are met:
-
-- **Operating System**: Arch Linux with Bash
-- **Permissions**: Root access or `sudo` privileges to execute the scripts
 
 ---
 

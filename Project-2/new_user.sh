@@ -54,6 +54,7 @@ add_user() {
 # Function to add the new user to additional groups if specified.
 # Checks if each group exists in /etc/group. If it does, appends the username to that group.
 # https://www.geeksforgeeks.org/group-management-in-linux/
+# https://linuxize.com/post/how-to-add-user-to-group-in-linux/
 add_group() {
     for group in "${group_add[@]}"; do
         if ! grep -q "^$group:" /etc/group; then

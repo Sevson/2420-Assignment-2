@@ -52,7 +52,7 @@ sudo ./init.sh -i
 ````
 Run only the config script
 ````
-sudo ./init.sh -i
+sudo ./init.sh -c
 ````
 Show help menu
 ````
